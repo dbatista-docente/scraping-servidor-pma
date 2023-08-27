@@ -26,7 +26,7 @@ export class AppController {
         `Declaração duplo vinculo do mês de ${this.contrachequeService.monthCurrent()} funcionário Dener Gomes Batista (3-03783)`,
         `Segue em anexo ${
           contracheques.length
-        } contracheque(s) do mês de ${this.contrachequeService.monthCurrent()} referente ao vinculo empregatício com Prefeitura municipal de Aracruz.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n E-mail gerado por api automatizada criado por <a href="https://www.linkedin.com/in/denerbatista">Dener Batista</a>. `,
+        } contracheque(s) do mês de ${this.contrachequeService.monthCurrent()} referente ao vinculo empregatício com Prefeitura municipal de Aracruz.\n\n\n\n\n\n\n\n\n\n\n\n E-mail gerado por api automatizada criado por <a href="https://www.linkedin.com/in/denerbatista">Dener Batista</a>. `,
         'dener70@gmail.com',
         await this.contrachequeService.getContrachequeImage(),
       );
