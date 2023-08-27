@@ -33,7 +33,7 @@ export class EmailService {
     }
 
     const mailOptions = {
-      from: 'Dener Batista<dbatista@findes.org.br>',
+      from: 'Dener Gomes Batista<dbatista@findes.org.br>',
       to: to,
       subject: subject,
       text: text,

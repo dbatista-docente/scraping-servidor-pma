@@ -23,11 +23,16 @@ export class AppController {
 
     if (contracheques.length > 0) {
       await this.emailService.sendEmailWithAttachment(
-        `Declaração duplo vinculo do mês de ${this.contrachequeService.monthCurrent()} funcionário Dener Gomes Batista (3-03783)`,
-        `Segue em anexo ${
+        `Declaração duplo vinculo do mês de ${this.contrachequeService.monthCurrent()} funcionário 3-03783`,
+        `
+        Olá,\n
+        segue em anexo ${
           contracheques.length
-        } contracheque(s) do mês de ${this.contrachequeService.monthCurrent()} referente ao vinculo empregatício com Prefeitura municipal de Aracruz.\n\n\n\n\n\n\n\n\n\n\n\n E-mail gerado por api automatizada criado por <a href="https://www.linkedin.com/in/denerbatista">Dener Batista</a>. `,
-        'dener70@gmail.com',
+        } contracheque(s) do mês de ${this.contrachequeService.monthCurrent()} referente ao vinculo empregatício com Prefeitura municipal de Aracruz.\n
+        Em caso de dúvidas, me coloco à disposição.
+        \n\n\n\n\n\n E-mail gerado por api automatizada criada por <a href="https://www.linkedin.com/in/denerbatista">Dener Batista</a> \n 
+        <h2>Dener Gomes Batista</h2><p>Instrutor de Educação Profissional</p><p>SENAI - Serviço Nacional de Aprendizagem Industrial</p><p>Telefone: (27) 99807-9104</p><p>E-mail: dbatista@findes.org.br</p><p>Site: <a href="http://www.sistemafindes.org.br">www.sistemafindes.org.br</a></p> `,
+        'dbatista@findes.org.br',
         await this.contrachequeService.getContrachequeImage(),
       );
       return `
