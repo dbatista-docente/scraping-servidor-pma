@@ -109,7 +109,7 @@ export class ContrachequeService {
 
       this._files = [
         ...this._files,
-        [`${month[1]}-${month[3]}.jpg`, screenshotBuffer.toString('base64')],
+        [`${month[1]}-${month[3]}`, screenshotBuffer.toString('base64')],
       ];
 
       console.log(`${this._files.length} foram gerados.`);

@@ -13,11 +13,11 @@ export class EmailService {
   ) {
     const attachments = [];
     const transporter = nodemailer.createTransport({
-      host: 'smtp-relay.brevo.com',
+      host: process.env.HOST,
       port: 587,
       auth: {
-        user: 'dbatista@findes.org.br',
-        pass: 'TwcahyQsvfn7S9DH',
+        user: process.env.USER,
+        pass: process.env.PASS,
       },
     });
 
@@ -26,6 +26,8 @@ export class EmailService {
         attachments.push({
           filename: attachmentPath[i][0], // Nome do anexo no email
           content: attachmentPath[i][1], // imagem em base64
+          contentType: 'image/png', // Tipo de conteúdo da imagem
+          encoding: 'base64', // Codificação em base64
         });
       }
     }

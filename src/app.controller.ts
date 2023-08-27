@@ -18,18 +18,73 @@ export class AppController {
 
   @Get('generate')
   async verificarContracheque() {
-    const quantidadeContracheques =
-      await this.contrachequeService.getContrachequeImage();
+    this.contrachequeService._files = [];
+    const contracheques = await this.contrachequeService.getContrachequeImage();
 
-    if (quantidadeContracheques.length > 0) {
+    if (contracheques.length > 0) {
       await this.emailService.sendEmailWithAttachment(
         `Declaração duplo vinculo do mês de ${this.contrachequeService.monthCurrent()} funcionário Dener Gomes Batista (3-03783)`,
-        `Segue anexo ${
-          quantidadeContracheques.length
-        } contracheque(s) do mês ${this.contrachequeService.monthCurrent()} gerado por api automatizada.`,
+        `Segue em anexo ${
+          contracheques.length
+        } contracheque(s) do mês de ${this.contrachequeService.monthCurrent()} referente ao vinculo empregatício com Prefeitura municipal de Aracruz.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n E-mail gerado por api automatizada criado por <a href="https://www.linkedin.com/in/denerbatista">Dener Batista</a>. `,
         'dener70@gmail.com',
         await this.contrachequeService.getContrachequeImage(),
       );
+      return `
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Enviado com Sucesso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #337ab7;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .success-icon {
+      color: #4caf50;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">✔️</div>
+    <h1>Email Enviado com Sucesso</h1>
+  </div>
+</body>
+</html>
+
+      `;
     } else {
       console.log(
         `Nenhum contracheque encontrado para o mês ${this.contrachequeService.monthCurrent()}`,
