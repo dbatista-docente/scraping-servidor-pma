@@ -6,7 +6,7 @@ export class ContrachequeService {
   _files = [];
 
   monthCurrent() {
-    const monthCurrent = new Date().getMonth();
+    const monthCurrent = new Date().getMonth() + 1;
     const stringMonths = [
       'janeiro',
       'fevereiro',
@@ -51,7 +51,7 @@ export class ContrachequeService {
     const datos = (
       await page.$$eval('.pg-servidor-dados-resultado', (divs: any[]) =>
         divs.map((div) => {
-          const monthCurrent = new Date().getMonth();
+          const monthCurrent = new Date().getMonth() + 1;
           const stringMonths = [
             'janeiro',
             'fevereiro',
@@ -79,9 +79,6 @@ export class ContrachequeService {
         }),
       )
     ).filter((result) => result !== null);
-    console.log(`${this.monthCurrent()}/${String(new Date().getFullYear())}`);
-
-    console.log('datos', datos);
 
     for (let i = 0; i < datos.length; i++) {
       try {
