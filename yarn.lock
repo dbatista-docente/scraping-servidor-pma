@@ -1956,16 +1956,6 @@ cors@2.8.5:
     object-assign "^4"
     vary "^1"
 
-cosmiconfig@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-8.2.0.tgz#f7d17c56a590856cd1e7cee98734dca272b0d8fd"
-  integrity sha512-3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==
-  dependencies:
-    import-fresh "^3.2.1"
-    js-yaml "^4.1.0"
-    parse-json "^5.0.0"
-    path-type "^4.0.0"
-
 cosmiconfig@^7.0.1:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-7.1.0.tgz#1443b9afa596b670082ea46cbd8f6a62b84635f6"
@@ -4179,7 +4169,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.0.tgz#f67fa67c94da8f4d0cfff981aee4118064199b8f"
   integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
 
-puppeteer-core@21.1.0:
+puppeteer-core@^21.1.0:
   version "21.1.0"
   resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-21.1.0.tgz#f7680ed17076fba6a721f9b81fc045a8351bb8b3"
   integrity sha512-ggfTj09jo81Y6M4DyNj80GrY6Pip+AtDUgGljqoSzP6FG5nz5Aju6Cs/X147fLgkJ4UKTb736U6cDp0ssLzN5Q==
@@ -4190,15 +4180,6 @@ puppeteer-core@21.1.0:
     debug "4.3.4"
     devtools-protocol "0.0.1159816"
     ws "8.13.0"
-
-puppeteer@^21.1.0:
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-21.1.0.tgz#ccea4a1d055b9ff58bde5933b75afba2782e470a"
-  integrity sha512-x0KfxVd7Hsefq8nzH1AAdSnYw5HEKI4QPeexBmx7nO29jDoEKNE+75G8zQ0E57ZOny/vAZZptCFdD3A7PkeESQ==
-  dependencies:
-    "@puppeteer/browsers" "1.7.0"
-    cosmiconfig "8.2.0"
-    puppeteer-core "21.1.0"
 
 pure-rand@^6.0.0:
   version "6.0.2"
