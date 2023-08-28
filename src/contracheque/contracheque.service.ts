@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import * as puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
 
 @Injectable()
 export class ContrachequeService {
