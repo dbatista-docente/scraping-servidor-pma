@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 
-// email.service.ts
-
 @Injectable()
 export class EmailService {
   async sendEmailWithAttachment(
@@ -21,7 +19,7 @@ export class EmailService {
       },
     });
 
-    if (attachmentPath.length > 1) {
+    if (attachmentPath.length > 0) {
       for (let i = 0; attachmentPath.length > i; i++) {
         attachments.push({
           filename: attachmentPath[i][0], // Nome do anexo no email

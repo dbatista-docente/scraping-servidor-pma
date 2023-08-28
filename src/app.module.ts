@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ContrachequeService } from './contracheque/contracheque.service';
-import { EmailService } from './contracheque/email/sendEmail.service';
+import { EmailService } from './email/sendEmail.service';
 
 @Module({
   controllers: [AppController],
