@@ -36,7 +36,7 @@ export class AppController {
           await this.emailService.sendEmailWithAttachment(
             `Declaração de duplo vinculo do mês de ${this.payStubService.monthCurrent()} funcionário 3-03783`,
             bodyEmailHtml(this.payStubService.monthCurrent()),
-            'denerbatista@live.com',
+            'grfolhadepagamento@findes.org.br',
             payStubs,
           );
           await prisma.emailLog.create({
