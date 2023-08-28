@@ -5,8 +5,9 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { type Server } from 'http';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
+export const port = process.env.PORT ?? 3000;
+
 async function bootstrap() {
-  const port = process.env.PORT ?? 3000;
   const app = await NestFactory.create<INestApplication>(AppModule, {
     cors: true,
   });

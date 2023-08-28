@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import puppeteer from 'puppeteer';
+import { port } from 'src/main';
 
 @Injectable()
 export class ContrachequeService {
@@ -27,7 +28,12 @@ export class ContrachequeService {
   }
 
   async getContrachequeImage(): Promise<string[] | []> {
-    const browser = await puppeteer.launch();
+    const browser =
+      port !== 3000
+        ? await puppeteer.launch({
+            executablePath: '/opt/render/.cache/puppeteer',
+          })
+        : await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({ width: 800, height: 800 });
 
