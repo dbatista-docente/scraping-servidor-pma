@@ -33,12 +33,7 @@ export class ContrachequeService {
 
     try {
       await page.goto('http://www.secom.aracruz.es.gov.br/servidor/login/');
-    } catch (error) {
-      console.error('Erro ao abrir a página de login:', error);
-      return [];
-    }
-
-    await page.waitForSelector('#matricula', { visible: true });
+      await page.waitForSelector('#matricula', { visible: true });
     await page.type('#matricula', '32144');
     await page.type('#senha', '32761562');
     await page.click('#formLogin > div:nth-child(2) > input');
@@ -119,4 +114,10 @@ export class ContrachequeService {
 
     return this._files;
   }
+    } catch (error) {
+      console.error('Erro ao abrir a página de login:', error);
+      return [];
+    }
+
+    
 }
