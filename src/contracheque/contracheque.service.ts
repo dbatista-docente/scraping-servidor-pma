@@ -15,11 +15,9 @@ export class ContrachequeService {
       'maio',
       'junho',
       'julho',
-      'julho',
       'agosto',
       'setembro',
       'outubro',
-      'setembro',
       'novembro',
       'dezembro',
     ];
