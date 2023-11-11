@@ -27,8 +27,7 @@ export class ContrachequeService {
   }
 
   async getContrachequeImage(): Promise<string[] | []> {
-    const browser = await puppeteer.launch();
-    await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setViewport({ width: 800, height: 800 });
 
