@@ -4,9 +4,10 @@ import puppeteer from 'puppeteer';
 @Injectable()
 export class ContrachequeService {
   _files = [];
+  _monthCurrent = this.monthCurrent();
 
   monthCurrent() {
-    const monthCurrent = new Date().getMonth() + 1;
+    const monthCurrent = new Date().getMonth();
     const stringMonths = [
       'janeiro',
       'fevereiro',
@@ -44,7 +45,7 @@ export class ContrachequeService {
       const datos = (
         await page.$$eval('.pg-servidor-dados-resultado', (divs: any[]) =>
           divs.map((div) => {
-            const monthCurrent = new Date().getMonth() + 1;
+            const monthCurrent = new Date().getMonth();
             const stringMonths = [
               'janeiro',
               'fevereiro',
@@ -53,11 +54,9 @@ export class ContrachequeService {
               'maio',
               'junho',
               'julho',
-              'julho',
               'agosto',
               'setembro',
               'outubro',
-              'setembro',
               'novembro',
               'dezembro',
             ];
@@ -97,14 +96,11 @@ export class ContrachequeService {
 
         const screenshotBuffer = await page.screenshot();
 
-        console.log(
-          `Contracheque ${month[1]}-${month[3]} gerado `,
-          Date.now(),
-        );
+        console.log(`Contracheque ${month[1]}-${month[3]} gerado `, Date.now());
 
         this._files = [
           ...this._files,
-          [`${month[1]}-${month[3]}`, screenshotBuffer.toString('base64')],
+          [`${month[1]}-${month[3]}.png`, screenshotBuffer.toString('base64')],
         ];
 
         console.log(`${this._files.length} foram gerados.`);
